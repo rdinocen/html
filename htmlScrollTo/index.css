@@ -1,0 +1,20 @@
+table{margin-top:20px;}
+td{padding:3px;}
+td:nth-child(1){color:red;}
+tr.active{background-color:yellow;}
+
+#control{line-height:20px;padding:3px;position:fixed;top:0;left:0;right:0;background-color:#999955}
+
+.attention {
+  animation: 2s attention;
+}
+
+@keyframes attention {
+  0% {
+    background-color: yellow;
+  }
+}
+
+.ulreq {
+  background-color: green;
+}

@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="http://akottr.github.io/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/akottr.css" />
+<link rel="stylesheet" type="text/css" href="css/dragtable.css" />
+
+<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script src="js/jquery.dragtable.js"></script>
+
+<script src="js/plugin.js"></script>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) {
+    // create new Plugin instance
+    var pluginInstance = new PluginNameHere({
+        selector: ".sample",
+        someDefaultOption: 'foo2',
+        classToAdd: "custom-new-class-name",
+    })
+
+    //access public plugin methods
+    pluginInstance.doSomething("Doing Something Else")
+  });
+</script>
+
+<title>jquery.dragtable.js</title>
+</head>
+<body>
+
+<div class="sample">
+  <div class="description">
+    <h4>description</h4>
+    <div class="description-content">Moving only the header. Recommended for very large tables (cells &gt; 1000) </div>
+
+  </div>
+  <div class="code">
+    <h4>code</h4>
+    <div class="code-snippet">
+      <pre><code class="js">$('#onlyHeaderTable').dragtable({maxMovingRows:1});</code></pre>
+    </div>
+  </div>
+  <div class="demo">
+
+    <h4>demo</h4>
+    <div class="demo-content">
+      <table id="onlyHeaderTable" class="sar-table draggable">>
+        <thead>
+          <tr>
+            <th>TIME</th>
+            <th>%user</th>
+
+            <th>%nice</th>
+            <th>%system</th>
+            <th>%iowait</th>
+            <th>%idle</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>12:10:01 AM</td><td>28.86</td><td>0.04</td><td>1.65</td><td>0.08</td><td>69.36</td>
+          </tr>
+          <tr>
+            <td>12:20:01 AM</td><td>26.54</td><td>0.00</td><td>1.64</td><td>0.08</td><td>71.74</td>
+
+          </tr>
+          <tr>
+            <td>12:30:01 AM</td><td>29.73</td><td>0.00</td><td>1.66</td><td>0.09</td><td>68.52</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

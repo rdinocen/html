@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>HTML Table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="">
+    
+    <link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/dragndrop-table-columns.css">
+	
+	<script src="lib/jquery.js"></script>
+	
+	<script src="js/index.js"></script>
+	<script src="js/jquery.dragndrop-table-columns.js"></script>
+	<script src="js/jquery.floatthead.js"></script>
+</head>
+<body>
+    <div id="change">
+        <label>Column: <input class="col" type="number" value="1"></label>
+        <label>Row: <input class="row" type="number" value="1"></label>
+		<button data-toggle="tooltip" data-placement="bottom" title="Find change">Find change</button>
+	</div>
+	<hr>
+	<div id="blank">
+		<!-- -->
+	</div>
+    <div class="content">
+		<table class="table table-bordered table-hover data" id="table1">
+			<thead>
+				<tr class="dnd-moved">
+					<th data-rtc-resizable="column-1">Column #1</th>
+					<th>Column #2</th><!-- THIS COLUMN WILL NOT BE RESIZABLE -->
+					<th>Column #3</th><!-- THIS COLUMN WILL NOT BE RESIZABLE -->
+					<th data-rtc-resizable="column-4">Column #4</th>
+					<th data-rtc-resizable="column-5">Column #5</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="dnd-moved">
+					<td>Row #1-1</td>
+					<td>Row #1-2</td>
+					<td>Row #1-3</td>
+					<td>Row #1-4</td>
+					<td>Row #1-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #2-1</td>
+					<td>Row #2-2</td>
+					<td>Row #2-3</td>
+					<td>Row #2-4</td>
+					<td>Row #2-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #3-1</td>
+					<td>Row #3-2</td>
+					<td>Row #3-3</td>
+					<td>Row #3-4</td>
+					<td>Row #3-5</td>
+				</tr>
+				<tr class="dnd-moved ulreq">
+					<td>Row #4-1</td>
+					<td>Row #4-2</td>
+					<td>Row #4-3</td>
+					<td>Row #4-4</td>
+					<td>Row #4-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #5-1</td>
+					<td>Row #5-2</td>
+					<td>Row #5-3</td>
+					<td>Row #5-4</td>
+					<td>Row #5-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #6-1</td>
+					<td>Row #6-2</td>
+					<td>Row #6-3</td>
+					<td>Row #6-4</td>
+					<td>Row #6-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #7-1</td>
+					<td>Row #7-2</td>
+					<td>Row #7-3</td>
+					<td>Row #7-4</td>
+					<td>Row #7-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #8-1</td>
+					<td>Row #8-2</td>
+					<td>Row #8-3</td>
+					<td>Row #8-4</td>
+					<td>Row #8-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #9-1</td>
+					<td>Row #9-2</td>
+					<td>Row #9-3</td>
+					<td>Row #9-4</td>
+					<td>Row #9-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #10-1</td>
+					<td>Row #10-2</td>
+					<td>Row #10-3</td>
+					<td>Row #10-4</td>
+					<td>Row #10-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td></td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>   </td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #12-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #12-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+				<tr class="dnd-moved">
+					<td>Row #11-1</td>
+					<td>Row #11-2</td>
+					<td>Row #11-3</td>
+					<td>Row #11-4</td>
+					<td>Row #11-5</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+</body>
+</html>

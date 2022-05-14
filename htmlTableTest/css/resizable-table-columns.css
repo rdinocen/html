@@ -1,0 +1,78 @@
+.rtc-hidden {
+  display: none !important;
+}
+
+.wrapper {
+  position: relative;
+  overflow-x: auto;
+}
+
+.wrapper table.rtc-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  white-space: nowrap;
+  margin: 0;
+  width: auto;
+}
+
+.wrapper table.rtc-table thead,
+.wrapper table.rtc-table tbody,
+.wrapper table.rtc-table tfoot {
+  margin: 0;
+}
+
+.wrapper table.rtc-table thead tr,
+.wrapper table.rtc-table tbody tr,
+.wrapper table.rtc-table tfoot tr {
+  margin: 0;
+}
+
+.wrapper table.rtc-table thead tr th,
+.wrapper table.rtc-table thead tr td,
+.wrapper table.rtc-table tbody tr th,
+.wrapper table.rtc-table tbody tr td,
+.wrapper table.rtc-table tfoot tr th,
+.wrapper table.rtc-table tfoot tr td {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wrapper table.rtc-table.rtc-table-resizing {
+  cursor: col-resize;
+}
+
+.wrapper table.rtc-table.rtc-table-resizing thead,
+.wrapper table.rtc-table.rtc-table-resizing thead > th,
+.wrapper table.rtc-table.rtc-table-resizing thead > th > a {
+  cursor: col-resize;
+}
+
+.wrapper table.rtc-table thead tr.invisible,
+.wrapper table.rtc-table thead tr.invisible th {
+  border: none;
+  margin: 0;
+  padding: 0;
+  height: 0 !important;
+}
+
+.wrapper .rtc-handle-container {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.wrapper .rtc-handle-container .rtc-handle {
+  position: absolute;
+  width: 6.5px;
+  margin-left: -3.575px;
+  z-index: 2;
+  cursor: col-resize;
+}
+
+.wrapper .rtc-handle-container .rtc-handle:last-of-type {
+  width: 4.5px;
+  margin-left: -4.95px;
+}
