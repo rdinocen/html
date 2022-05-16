@@ -24,7 +24,14 @@
     <div class="draggable"> </div>
 
     <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="index2.js"></script>
+    <script type="text/javascript" src="jquery-ui.js"></script>
+    <!--<script type="text/javascript" src="index2.js"></script>-->
+
+    <script>
+        $( function() {
+            $( ".draggable-child" ).draggable({ containment: "#parent", scroll: false });
+        });
+    </script>
 </body>
 
 </html>

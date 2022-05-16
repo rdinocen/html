@@ -13,7 +13,7 @@ body {
 
 .draggable {
     position: absolute;
-    width: 100px;
+    width: 110px;
     height: 100px;
     background-color: black;
     -webkit-user-select: none;
