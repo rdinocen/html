@@ -1,3 +1,7 @@
+body {
+    background-color:gray !important;
+}
+
 .blue-background-class {
     background-color: blue !important;
 }

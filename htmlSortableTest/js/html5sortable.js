@@ -969,6 +969,8 @@ var sortable = (function () {
            from the item
            */
           addEventListener(sortableElement, 'dragstart', function (e) {
+              console.log(e);
+              
               // ignore dragstart events
               var target = getEventTarget(e);
               if (target.isSortable === true) {

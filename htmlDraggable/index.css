@@ -1,11 +1,11 @@
 body {
-    background-color: lightgray;
+    background-color:hsl(209, 13%, 20%);
 }
 
 #parent {
     height:400px;
     width:400px;
-    border:solid 1px black;
+    border:solid 2px white;
     position: absolute;
     top: 50px;
     left: 50px;
@@ -15,7 +15,7 @@ body {
     position: absolute;
     width: 110px;
     height: 100px;
-    background-color: black;
+    background-color: hsl(0, 0%, 45%);
     -webkit-user-select: none;
     -moz-user-select: none;
     -o-user-select: none;
@@ -23,6 +23,13 @@ body {
     -khtml-user-select: none;
     user-select: none;
     cursor: default;
+    top: 100px;
+    left: 600px;
+}
+
+#parent .draggable {
+    top: 0px;
+    left: 0px;
 }
 
 .ghost {
