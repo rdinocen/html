@@ -4,22 +4,67 @@
     } else if (typeof exports === 'object') {
         module.exports = factory(root);
     } else {
-        root.PluginNameHere = factory(root);
+        root.ResizableTableColumns = factory(root);
     }
 })(typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this, (window) => {
     'use strict';
 
-    var defaults = {
-        selector: '.yourSelector',
-        someDefaultOption: 'foo',
-        classToAdd: "new-class-name"
+    const defaults = {
+        // Attributes
+        resizeMode: 'fit',
+        gripInnerHtml: '',
+        store: null,
+        liveDrag: true,
+        minWidth: 40,
+        maxWidth: null,
+        resizeFromBody: true,
+        doubleClickDelay: 500,
+        disabledColumns: [],
+
+        // Custom Events
+        emitEvents: true
     };
+
+    const constants = {
+        dataPropertyName: 'validide_rtc_data_object',
+        classes: {
+            table: 'rtc-table',
+            wrapper: 'rtc-wrapper',
+            handleContainer: 'rtc-handle-container',
+            handle: 'rtc-handle',
+            tableResizing: 'rtc-table-resizing',
+            columnResizing: 'rtc-column-resizing',
+        },
+        attributes: {
+            dataResizable: 'data-rtc-resizable',
+            dataResizableTable: 'data-rtc-resizable-table'
+        },
+        data: {
+            resizable: 'rtcResizable',
+            resizableTable: 'rtcResizableTable'
+        },
+        events: {
+            pointerDown: ['mousedown', 'touchstart'],
+            pointerMove: ['mousemove', 'touchmove'],
+            pointerUp: ['mouseup', 'touchend'],
+            windowResize: ['resize'],
+            eventResizeStart: 'eventResizeStart.rtc',
+            eventResize: 'eventResize.rtc',
+            eventResizeStop: 'eventResizeStop.rtc'
+        }
+    };
+
+    function PointerData () {
+        this.x = null;
+        this.isDoubleClick = null;
+    }
+
     /**
      * Merge defaults with user options
      * @param {Object} defaults Default settings
      * @param {Object} options User options
      */
-    var extend = function (target, options) {
+    var extend = function (options) {
         var prop, extended = {};
         for (prop in defaults) {
             if (Object.prototype.hasOwnProperty.call(defaults, prop)) {
@@ -35,29 +80,34 @@
     };
 
     /**
-     * Helper Functions
-     @private
-        */
-    var privateFunction = function () {
-        // Helper function, not directly acessible by instance object
-    };
+	 * Emit a custom event
+	 * @param  {String} type    The event type
+	 * @param  {Object} options The settings object
+	 * @param  {Node}   anchor  The anchor element
+	 * @param  {Node}   toggle  The toggle element
+	 */
+	var emitEvent = function (elem, type, details) {
+		if (typeof window.CustomEvent !== 'function') return;
+		var event = new CustomEvent(type, {
+			bubbles: true,
+			detail: details || {}
+		});
+		elem.dispatchEvent(event);
+	};
+
 
     /**
-     * Plugin Object
-     * @param {Object} options User options
-     * @constructor
+     * Helper Functions
+     @private
      */
-    class Plugin {
-        constructor(options) {
-            this.options = extend(defaults, options);
-            this.init(); // Initialization Code Here
-        }
-        /**
-         * Plugin prototype
-         * @public
-         * @constructor
-         */
-        init() {
+    var privateFunction = function (prefix) {
+        // Helper function, not directly acessible by instance object
+        console.log(prefix);
+        console.log(this.options);
+    };
+
+    ResizableTableColumns.prototype = {
+        init: function () {
             // find all matching DOM elements.
             // makes `.selectors` object available to instance.
             this.selectors = document.querySelectorAll(this.options.selector);
@@ -67,24 +117,35 @@
                 selector.classList.add(this.options.classToAdd);
                 // do something
             }
-        }
-        /**
-         * Plugin prototype
-         * @public
-         * @constructor
-         */
-        destroy() {
+        },
+    
+        destroy: function () {
             // Remove any event listeners and undo any "init" actions here...
-        }
-        /**
-         * Plugin prototype
-         * @public
-         * @constructor
-         */
-        doSomething(someData) {
+        },
+    
+        doSomething: function (someData) {
+            console.log(this.table)
             console.log(someData);
+        },
+    
+        doSomething2: function () {
+            privateFunction.call(this, ">>");
         }
     }
 
-    return Plugin;
+    function ResizableTableColumns (table, options) {
+        this.table = table;
+        this.options = extend(defaults, options);
+        
+        this.options.fixed = true;
+        this.options.overflow = false;
+        switch(options.resizeMode) {
+            case 'flex': options.fixed = false; break;
+            case 'overflow': options.overflow = true; break;
+        }
+
+        this.init();
+    }
+
+    return ResizableTableColumns;
 });

@@ -15,15 +15,25 @@
 
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(event) {
+    table = document.getElementById('onlyHeaderTable');
+
     // create new Plugin instance
-    var pluginInstance = new PluginNameHere({
+    var pluginInstance = new ResizableTableColumns(
+      table,
+      {
         selector: ".sample",
         someDefaultOption: 'foo2',
         classToAdd: "custom-new-class-name",
-    })
+      }
+    );
 
     //access public plugin methods
-    pluginInstance.doSomething("Doing Something Else")
+    pluginInstance.doSomething("Doing Something Else");
+
+    pluginInstance.doSomething2();
+
+    console.log(pluginInstance.hi);
+    pluginInstance.privateFunction();
   });
 </script>
 
